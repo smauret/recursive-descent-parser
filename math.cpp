@@ -12,8 +12,10 @@ Parser::Parser(std::string line):error(false) {
 }
 
 void Parser::parse() {
-    double d = !error && term();
-    !error && cout << "answer :" << d << endl;
+    if(!error){
+        double d = term();
+        !error && cout << "answer :" << d << endl;
+    }
 };
 
 double Parser::number() {

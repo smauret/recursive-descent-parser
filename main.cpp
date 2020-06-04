@@ -13,14 +13,13 @@ bool ignoreLine(string expr) {
 }
 
 int main(int argc, char** argv) {
-
-    ifstream calculusFile("/Users/Konstantin/CLionProjects/calculator/input.txt");
+    ifstream calculusFile(argv[1]);
 
     if (calculusFile) {
         string line;
         while (getline(calculusFile, line)) {
             if(!ignoreLine(line)){
-                cout << "line : " << line << " " << endl;
+                cout << "line : " << line << " ";
                 Parser(line).parse();
             };
         }
