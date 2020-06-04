@@ -9,18 +9,18 @@ bool ignoreLine(string expr) {
     while (expr[i] == ' ') { //Check for spaces at the beginning of line
         i++;
     }
-    return expr[i] == '#';
+    return expr[i] == '#'; //Check if first char after spaces is # and in this case returns true
 }
 
 int main(int argc, char** argv) {
-    ifstream calculusFile(argv[1]);
+    ifstream calculusFile(argv[1]); //Open stream to text file path given in argument
 
-    if (calculusFile) {
+    if (calculusFile) { //Check if file opened
         string line;
-        while (getline(calculusFile, line)) {
-            if(!ignoreLine(line)){
+        while (getline(calculusFile, line)) { //Loop over all lines in file
+            if(!ignoreLine(line)){ //Ignore lines starting with #
                 cout << "line : " << line << " ";
-                Parser(line).parse();
+                Parser(line).parse(); //Call parser on line
             };
         }
     } else {
