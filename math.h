@@ -18,7 +18,7 @@ public:
 private:
     char lookahead;
     std::stringstream stream;
-    bool error = false;
+    bool error;
 
     static std::string extractSpaces(std::string basicString);
 

@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Parser::Parser(std::string line) {
+Parser::Parser(std::string line):error(false) {
     string lineNoSpace = extractSpaces(line);
     isValidSyntax(lineNoSpace);
     stream = stringstream(lineNoSpace);

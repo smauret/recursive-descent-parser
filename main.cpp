@@ -12,7 +12,7 @@ bool ignoreLine(string expr) {
     return expr[i] == '#';
 }
 
-int main() {
+int main(int argc, char** argv) {
 
     ifstream calculusFile("/Users/Konstantin/CLionProjects/calculator/input.txt");
 
